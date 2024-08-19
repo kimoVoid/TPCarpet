@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "me.kimovoid.tpextra.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"access.ScoreboardCommandInvoker"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "tpextra",
+	"version": "${version}",
+	"name": "TPExtra",
+	"description": "TecnicPhantoms server mod <3",
+	"authors": [
+		"kimoVoid"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.kimovoid.tpextra.TPExtra"
+		]
+	},
+	"mixins": [
+		"tpextra.mixins.json"
+	],
+	"depends": {
+		"minecraft": "~1.15.2"
+	}
+}
