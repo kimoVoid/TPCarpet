@@ -1,4 +1,4 @@
-# TPExtra Mod
+# TPCarpet Mod
 Server mod for TecnicPhantoms for Fabric 1.15.2
 
 ## Commands
