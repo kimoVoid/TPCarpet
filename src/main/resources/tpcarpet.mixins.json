@@ -5,7 +5,9 @@
   "mixins": [
     "EntityPlayerMPFakeMixin",
     "PlayerCommandMixin",
-    "access.ScoreboardCommandInvoker"
+    "access.ScoreboardCommandInvoker",
+    "rule.yeetUpdateSuppressionCrash.yeet.MinecraftServerMixin",
+    "rule.yeetUpdateSuppressionCrash.yeet.ServerPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
