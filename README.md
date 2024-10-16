@@ -1,5 +1,5 @@
-# TPCarpet
-Carpet mod extension for TecnicPhantoms SMP
+# TPCarpet 1.15.2
+A Fabric-Carpet mod extension for TecnicPhantoms SMP
 
 ## Commands
 - `/setsb (scoreboard)` - Command for that any player can change sidebar.
