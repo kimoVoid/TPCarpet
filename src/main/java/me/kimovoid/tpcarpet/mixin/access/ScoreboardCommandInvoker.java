@@ -1,4 +1,4 @@
-package me.kimovoid.tpextra.mixin.access;
+package me.kimovoid.tpcarpet.mixin.access;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.scoreboard.ScoreboardObjective;

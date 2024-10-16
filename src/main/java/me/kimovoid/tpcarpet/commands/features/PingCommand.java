@@ -1,4 +1,4 @@
-package me.kimovoid.tpextra.commands;
+package me.kimovoid.tpcarpet.commands.features;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;

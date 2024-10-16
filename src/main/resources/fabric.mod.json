@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "tpextra",
+	"id": "tpcarpet",
 	"version": "${version}",
-	"name": "TPExtra",
-	"description": "TecnicPhantoms server mod <3",
+	"name": "TPCarpet",
+	"description": "TecnicPhantoms carpet extension <3",
 	"authors": [
 		"kimoVoid, KatPrz02"
 	],
@@ -15,11 +15,11 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"me.kimovoid.tpextra.TPExtra"
+			"me.kimovoid.tpcarpet.TPCarpet"
 		]
 	},
 	"mixins": [
-		"tpextra.mixins.json"
+		"tpcarpet.mixins.json"
 	],
 	"depends": {
 		"minecraft": "~1.15.2"

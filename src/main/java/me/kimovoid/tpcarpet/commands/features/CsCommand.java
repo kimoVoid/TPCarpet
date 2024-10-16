@@ -1,4 +1,4 @@
-package me.kimovoid.tpextra.commands;
+package me.kimovoid.tpcarpet.commands.features;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.server.command.CommandManager;

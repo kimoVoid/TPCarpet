@@ -1,7 +1,7 @@
-package me.kimovoid.tpextra.commands;
+package me.kimovoid.tpcarpet.commands.features;
 
 import com.mojang.brigadier.CommandDispatcher;
-import me.kimovoid.tpextra.mixin.access.ScoreboardCommandInvoker;
+import me.kimovoid.tpcarpet.mixin.access.ScoreboardCommandInvoker;
 import net.minecraft.command.arguments.ObjectiveArgumentType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
