@@ -1,5 +1,6 @@
 package me.kimovoid.tpextra;
 
+import me.kimovoid.tpextra.commands.CsCommand;
 import me.kimovoid.tpextra.commands.PingCommand;
 import me.kimovoid.tpextra.commands.SetSbCommand;
 import net.fabricmc.api.ModInitializer;
@@ -21,5 +22,6 @@ public class TPExtra implements ModInitializer {
 		/* Commands */
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> SetSbCommand.register(dispatcher));
 		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess) -> PingCommand.register(dispatcher)));
+		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess) -> CsCommand.register(dispatcher)));
 	}
 }
