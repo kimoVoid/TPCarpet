@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class TPCarpet implements ModInitializer {
 
 	public static TPCarpet INSTANCE;
-    public static final Logger LOGGER = LogManager.getLogger("TPExtra");
+    public static final Logger LOGGER = LogManager.getLogger("TPCarpet");
 
 	@Override
 	public void onInitialize() {

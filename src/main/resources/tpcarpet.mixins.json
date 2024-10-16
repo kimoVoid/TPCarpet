@@ -3,6 +3,8 @@
   "package": "me.kimovoid.tpcarpet.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "EntityPlayerMPFakeMixin",
+    "PlayerCommandMixin",
     "access.ScoreboardCommandInvoker"
   ],
   "injectors": {
