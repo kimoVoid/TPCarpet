@@ -6,6 +6,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import me.kimovoid.tpcarpet.commands.features.CsCommand;
 import me.kimovoid.tpcarpet.commands.features.PingCommand;
 import me.kimovoid.tpcarpet.commands.features.SetSbCommand;
+import me.kimovoid.tpcarpet.commands.features.StopCommand;
 import me.kimovoid.tpcarpet.loggin.TPCarpetLoggerRegistry;
 import me.kimovoid.tpcarpet.utils.TPCarpetSettings;
 import net.fabricmc.api.ModInitializer;
@@ -41,6 +42,7 @@ public class TPCarpet implements ModInitializer, CarpetExtension {
 		SetSbCommand.register(dispatcher);
 		PingCommand.register(dispatcher);
 		CsCommand.register(dispatcher);
+		StopCommand.register(dispatcher);
 	}
 
 	@Override
