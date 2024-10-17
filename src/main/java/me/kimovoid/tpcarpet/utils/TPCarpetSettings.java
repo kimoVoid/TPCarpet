@@ -10,5 +10,9 @@ public class TPCarpetSettings {
 
     @Rule(desc = "Prevent the server from crashing due to StackOverFlowError, OutOfmemoryError or ClassCastException.", category = {TP, BUGFIX})
     public static boolean yeetUpdateSuppressionCrash = false;
+
+    @Rule(desc = "Stopping server must be confirmed", category = {TP, FEATURE, COMMAND})
+    public static boolean stopCommandDoubleConfirmation = false;
+
 }
 
