@@ -24,5 +24,5 @@ public abstract class AbstractHUDLogger extends AbstractLogger
         );
     }
 
-    // Si lees es
+
 }

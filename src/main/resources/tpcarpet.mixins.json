@@ -6,6 +6,7 @@
     "EntityPlayerMPFakeMixin",
     "PlayerCommandMixin",
     "access.ScoreboardCommandInvoker",
+    "carpet.HUDControllerMixin",
     "rule.yeetUpdateSuppressionCrash.yeet.MinecraftServerMixin",
     "rule.yeetUpdateSuppressionCrash.yeet.ServerPlayerEntityMixin"
   ],

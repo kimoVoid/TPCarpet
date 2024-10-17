@@ -5,6 +5,7 @@ import carpet.CarpetServer;
 import me.kimovoid.tpcarpet.commands.features.CsCommand;
 import me.kimovoid.tpcarpet.commands.features.PingCommand;
 import me.kimovoid.tpcarpet.commands.features.SetSbCommand;
+import me.kimovoid.tpcarpet.loggin.TPCarpetLoggerRegistry;
 import me.kimovoid.tpcarpet.utils.TPCarpetSettings;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,7 +20,7 @@ public class TPCarpet implements ModInitializer, CarpetExtension {
     public static final Logger LOGGER = LogManager.getLogger("TPCarpet");
 
 	public static void loadExtension() {
-		CarpetServer.manageExtension(new TPCarpet());
+		CarpetServer.manageExtension(INSTANCE);
 	}
 
 	@Override
@@ -38,4 +39,10 @@ public class TPCarpet implements ModInitializer, CarpetExtension {
 		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess) -> PingCommand.register(dispatcher)));
 		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess) -> CsCommand.register(dispatcher)));
 	}
+
+	@Override
+	public void registerLoggers() {
+		TPCarpetLoggerRegistry.registerLoggers();
+	}
+
 }
