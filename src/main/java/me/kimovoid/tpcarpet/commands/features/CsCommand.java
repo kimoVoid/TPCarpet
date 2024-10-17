@@ -1,20 +1,23 @@
 package me.kimovoid.tpcarpet.commands.features;
 
 import com.mojang.brigadier.CommandDispatcher;
+import me.kimovoid.tpcarpet.utils.Location;
+import net.minecraft.network.MessageType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.LiteralText;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.text.Style;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.GameMode;
-import net.minecraft.world.dimension.DimensionType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CsCommand {
 
-    private static BlockPos savedPosition;
-    private static float savedYaw;
-    private static float savedPitch;
-    private static DimensionType savedDimension;
+    private static final Map<ServerPlayerEntity, Location> savedPositions = new HashMap<>();
+
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(CommandManager.literal("cs")
@@ -33,29 +36,31 @@ public class CsCommand {
     }
 
     private static void switchToSpectator(ServerPlayerEntity player) {
-        savedPosition = player.getBlockPos();
-        savedYaw = player.yaw;
-        savedPitch = player.pitch;
-        savedDimension = player.world.getDimension().getType();
+        savedPositions.put(player, new Location(player.getServerWorld(), player.getPos(), player.yaw, player.pitch));
 
         player.setGameMode(GameMode.SPECTATOR);
-        player.sendMessage(new LiteralText("Switched to Spectator Mode!"));
+        player.sendChatMessage(
+                new LiteralText("Switched to Spectator Mode!")
+                        .setStyle(new Style().setColor(Formatting.AQUA)),
+                MessageType.GAME_INFO
+        );
     }
 
     private static void switchToSurvival(ServerPlayerEntity player) {
+
+        Location tpLoc = savedPositions.get(player);
+        savedPositions.remove(player);
+        if (tpLoc == null){
+            tpLoc = new Location(player.getServerWorld(), player.getPos(), player.yaw, player.pitch);
+        }
+        player.teleport(tpLoc.getServerWorld(), tpLoc.getX(), tpLoc.getY(), tpLoc.getZ(), tpLoc.getYaw(), tpLoc.getPitch());
         player.setGameMode(GameMode.SURVIVAL);
 
-        if (player.world.getDimension().getType() == savedDimension) {
-            player.networkHandler.requestTeleport(
-                    savedPosition.getX(),
-                    savedPosition.getY(),
-                    savedPosition.getZ(),
-                    savedYaw,
-                    savedPitch
-            );
-        }
-
-        player.sendMessage(new LiteralText("Switched back to Survival Mode!"));
+        player.sendChatMessage(
+                new LiteralText("Switched back to Survival Mode!")
+                        .setStyle(new Style().setColor(Formatting.AQUA)),
+                MessageType.GAME_INFO
+        );
     }
 }
 
