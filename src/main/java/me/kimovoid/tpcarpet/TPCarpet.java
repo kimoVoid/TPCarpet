@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 public class TPCarpet implements ModInitializer, CarpetExtension {
 
+	public static final String MOD_NAME = "TPCarpet";
 	public static TPCarpet INSTANCE;
     public static final Logger LOGGER = LogManager.getLogger("TPCarpet");
 
